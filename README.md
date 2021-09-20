@@ -1,4 +1,4 @@
-# Wardrobe
+# Wardrobe(개인 옷장)
 
 1. First of all, i just setted project's environment. Even if i'm not sure what i should decide the project purpose.
 2. i decided to create music player -> 아직 확실하게 정하진 않았습니다. 또 바뀔 수 있습니다.
