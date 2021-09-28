@@ -8,19 +8,22 @@ plugins {
 android {
     compileSdk 30
 
+    def major = 1
+    def minor = 1
+    def patch = 1
+
     defaultConfig {
         applicationId "com.example.android.wardrobe"
-        minSdk 23
-        targetSdk 30
-        versionCode 1
-        versionName "1.0"
+        minSdk MinSdkVersion
+        targetSdk TargetSdkVersion
+        versionCode major*10000 + minor*100 + patch*1
+        versionName "${major}" + "." + "${minor}" + "." + "${patch}"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary true
         }
     }
-
     buildTypes {
         debug {
 
@@ -28,6 +31,15 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    flavorDimensions "mode"
+    productFlavors {
+        free {
+            dimension "mode"
+            applicationIdSuffix ".free"
+            versionCode
         }
     }
     compileOptions {
@@ -69,7 +81,7 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
 
-    // Hilt
+    // dagger Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 }
