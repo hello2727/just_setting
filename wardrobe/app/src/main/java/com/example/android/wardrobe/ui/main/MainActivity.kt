@@ -1,4 +1,4 @@
-package com.example.android.wardrobe
+package com.example.android.wardrobe.ui.main
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
